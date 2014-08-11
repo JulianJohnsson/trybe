@@ -1,0 +1,9 @@
+<h4 class="modal-title" id="myModalLabel" style="color:black; margin-bottom:10px;">Remontez la file d'attente en partageant !</h4>
+<%= simple_form_for(@facebook_post) do |f| %>
+	<%= f.error_notification %>
+	<%= f.input :message, label: false, input_html: { value: 'Découvrez trybe, la nouvelle génération d’event planner' } %>
+	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+		<i class="glyphicon glyphicon-send"></i>  GO
+	<% end %>
+				
+<% end %>

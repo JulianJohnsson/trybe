@@ -1,0 +1,4 @@
+<p>Merci pour le coup de pouce !</p>
+<p> Ton message : <%=@facebook_post.message %></p>
+<p> Tu es désormais <%= Visitor.where(facebook_share: true).count + 1 %>ème dans la file d'attente.</p>
+

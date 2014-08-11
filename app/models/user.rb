@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   #has_many :authentications, :dependent => :destroy
   #accepts_nested_attributes_for :authentications
   
-  #has_one :facebook_oauth_setting
+  has_one :facebook_oauth_setting
 
   validates :password, length: { minimum: 3 }
   validates :password, confirmation: true

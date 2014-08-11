@@ -7,7 +7,6 @@ class VisitorsController < ApplicationController
 
 	def create
 		@visitor = Visitor.new(secure_params) 
-		@application = Application.find 2
 		@facebook_post = FacebookPost.new
 
 		if @visitor.valid? && @visitor.save
@@ -16,7 +15,6 @@ class VisitorsController < ApplicationController
 			track_event("signup", email:"#{@visitor.email}")
 			#mixpanel_people_set( "email" => "#{@visitor.email}" )
 			flash[:notice] = "Signed up #{@visitor.email} successfully."
-			@application.update_subscribers
 			cookies[:email] = @visitor.email
 			redirect_to soon_path
 			#render :index

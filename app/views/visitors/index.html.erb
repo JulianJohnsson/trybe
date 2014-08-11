@@ -2,23 +2,23 @@
 <% content_for :description do %>Sign up to access Trybe beta release<% end %>
 
 <div class="container">
-	<div class="row" style="margin-top: 80px; margin-bottom: 0px;">
+	<div class="row" style="margin-top: 50px; margin-bottom: 0px;">
 		<div class="col-sm-9 hp-layer">
-			<h1>Bienvenue sur Trybe</h1>
+			<h1>Bienvenue sur trybe</h1>
 
 			<p>Vous êtes déjà <%= Visitor.count %> pré inscrits, les prochaines invitations partiront bientôt.</p>
-      <p>Tu es actuellement <%= @visitor.id %>ème dans la file d'attente.</p>
+      <p>Tu es actuellement <span style="color:#d77f0b; font-size:20px;">n°<%= @visitor.id %></span> dans la file d'attente.</p>
 			<p>
 				Parles-en autours de toi pour recevoir ton accès plus rapidement !
 			</p>
     </div>
     <div class="col-sm-3">
-      <div class="hp-layer" style="">  
+      <div class="hp-layer" style="padding-top:30px;">  
         <p>
-          <%= cookies[:email] %>
+          <i class="glyphicon glyphicon-circle-arrow-down"  style="font-size:30px;"></i>
         </p>			
         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  	  			SHARE THE LOVE
+  	  			<i class="glyphicon glyphicon-remove-sign"></i> SHARE THE LOVE
   			</button>
         <p><%= link_to 'Créer mon compte', visitor_path(@visitor) %>
         </p>
