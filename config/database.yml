@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: trybe_production
-  username: trybe
-  password: <%= ENV['TRYBE_DATABASE_PASSWORD'] %>
+  #database: trybe_production
+  #username: trybe
+  #password: <%= ENV['TRYBE_DATABASE_PASSWORD'] %>
