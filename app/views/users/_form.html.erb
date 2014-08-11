@@ -1,0 +1,10 @@
+<%= simple_form_for(@user, html: {class: "form-default text-center"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, autofocus: true, label: "Your Name" %>
+  <%= f.input :email, as: :email %>
+  <%= f.input :password, as: :password %>
+  <%= f.input :password_confirmation, as: :password %>
+
+  <%= f.submit "Submit", :class => "btn-lg btn-primary" %>
+<% end %>
+

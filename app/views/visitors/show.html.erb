@@ -1,0 +1,30 @@
+<% content_for :title do %>Inscrits toi sur LocalArt<% end %>
+<% content_for :description do %>Sign up to access Local Art beta release<% end %>
+<div class="container">
+	<div class="row" style="margin-top: 100px; margin-bottom: 20px;">
+		<div class="col-sm-7 col-sm-offset-3 column hp-layer">
+			<h1>Crées ton compte en moins de 10 secondes</h1>
+			<p>
+				Renseigne ton mot de passe ou inscrit toi via Facebook
+			</p>
+				<%= simple_form_for(@user, html: {class: "form-inline"}) do |f| %>
+					<%= f.error_notification %>
+					<%= f.input :password, as: :password %>
+  					<%= f.input :password_confirmation, as: :password %>
+					<%= f.input :email, :as => "hidden", :input_html => { :value => @visitor.email } %>
+				
+					<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+						<i class="glyphicon glyphicon-send"></i>   GO
+					<% end %>
+				
+				<% end %>
+				<p style="font-size:8px; margin-top:4px;">
+					<em>* Nous t'enverrons 1 email par semaine maximum, promis !</em>
+				</p>
+		</div>
+	</div>
+</div>
+
+
+
+

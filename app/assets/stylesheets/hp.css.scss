@@ -1,0 +1,35 @@
+.hp {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    
+    background-color: #1a1a1a;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hp_links {
+    position: fixed;
+    top: 94%;
+    left: 20px;
+    font-size: 16px;
+
+    a:hover {
+        color: #ffffff;
+        text-decoration: none;
+        background-color:black;
+    }   
+}
+
+.logo-hp {
+    :hover {
+        color: #ffffff;
+        text-decoration: none;
+    }  
+}
+
+
+
+

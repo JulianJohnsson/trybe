@@ -1,0 +1,29 @@
+<% content_for :title do %>Sign Up for Trybe<% end %>
+<% content_for :description do %>Sign up to access Trybe beta release<% end %>
+<div class="container">
+	<div class="row" style="margin-top: 100px; margin-bottom: 20px;">
+		<div class="col-sm-8 col-sm-offset-2 column hp-layer">
+			<h1>Organises facilement tes sorties entre amis !</h1>
+			<div class="message"><p>
+				En raison d'un nombre important de demande, l'application est accessible sur invitation pour l'instant.
+			</p></div>
+			<div class="message"><p>
+				Inscris-toi pour <strong>accéder gratuitement</strong> à la version privée avant le lancement.
+			</p></div>
+				<%= simple_form_for(@visitor, html: {class: "form-inline"}) do |f| %>
+					<%= f.error_notification %>
+					<%= f.input :email, label: false, :placeholder => 'Ton email...' %>
+					<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+						<i class="glyphicon glyphicon-circle-arrow-right"></i> Obtenir mon invitation
+					<% end %>
+				<% end %>
+				<p style="font-size:8px; padding-top:4px;">
+					<em>* Nous t'enverrons 1 email par semaine maximum, promis !</em>
+				</p>
+		</div>
+	</div>
+</div>
+
+
+
+

@@ -1,0 +1,70 @@
+// adding specific fonts
+
+@font-face {
+  font-family: "Playfair";
+  src:font-url("PlayfairDisplay-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+// Customize Bootstrap variables
+
+$gray-darker: #232323;
+$brand-primary: #d77f0b;
+$gray-lighter: #f0f0f0;
+
+$body-bg: $gray-darker;
+$text-color: $gray-lighter;
+
+$font-family-sans-serif:  "Playfair", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$input-border-focus: $brand-primary;
+
+$navbar-inverse-bg: $gray-lighter;
+$navbar-inverse-color: $gray-darker;
+$navbar-inverse-link-color: $gray-darker;
+$navbar-inverse-link-hover-color: #000000;
+
+// Import Bootstrap Framework
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.navbar-nav {
+  margin-top: 5px;
+  font-size: 16px;
+  }
+
+// message position fixe
+.alert {
+    position: fixed;
+    top: 60px;
+    left: 25%; 
+    right: 25%;
+    font-size:10px;
+}
+
+// FORMS
+.form {
+  @extend .col-sm-8;
+  }
+.form-centered {
+  @extend .col-md-8;
+  @extend .text-center;
+  }
+.form-inline .form-group input {
+    width:100%;
+    margin: 0 auto;
+}
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
+#error_notification {
+  color: #f00;
+}
+.field_with_errors {
+  @extend .has-error;
+}

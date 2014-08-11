@@ -1,0 +1,50 @@
+<% content_for :title do %>Sign Up for Trybe<% end %>
+<% content_for :description do %>Sign up to access Trybe beta release<% end %>
+
+<div class="container">
+	<div class="row" style="margin-top: 80px; margin-bottom: 0px;">
+		<div class="col-sm-9 hp-layer">
+			<h1>Bienvenue sur Trybe</h1>
+
+			<p>Vous êtes déjà <%= Visitor.count %> pré inscrits, les prochaines invitations partiront bientôt.</p>
+      <p>Tu es actuellement <%= @visitor.id %>ème dans la file d'attente.</p>
+			<p>
+				Parles-en autours de toi pour recevoir ton accès plus rapidement !
+			</p>
+    </div>
+    <div class="col-sm-3">
+      <div class="hp-layer" style="">  
+        <p>
+          <%= cookies[:email] %>
+        </p>			
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  	  			SHARE THE LOVE
+  			</button>
+        <p><%= link_to 'Créer mon compte', visitor_path(@visitor) %>
+        </p>
+      </div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">
+        		<span aria-hidden="true">&times;</span>
+        		<span class="sr-only">Close</span>
+        	</button>
+        </div>
+      	<div class="modal-body">
+        	<%= render "/facebook_posts/new" %>
+      	</div>
+      	<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        	<button type="button" class="btn btn-primary">Save changes</button>
+      	</div>
+    </div>
+  </div>
+</div>
+
+

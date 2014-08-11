@@ -1,0 +1,32 @@
+.tribe {
+    background-color: #1a1a1a;
+    background-image: url('maori-300.png'), url('skull-300.png');
+    background-position: 5% 60%, 95% 60%;
+    background-repeat: no-repeat;
+
+}
+.hp-layer {
+    padding-bottom: 0px;
+    align: center;
+    h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        padding-top:50px;
+    }
+    p {
+        font-size: 14px;
+        padding-bottom: 10px;
+        padding-top:15px;
+        .help-block {
+            text-color: #e06019;
+        }
+    }
+}
+// .message {
+//    border:1px solid transparent;
+//    border-top-color:#efefef;
+//}
+
+.form-inline input {
+    width:200px;
+}
