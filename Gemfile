@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Trybe
-gem 'sorcery'
 gem 'activerecord-tableless'
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'autoprefixer-rails'
@@ -22,6 +21,9 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'pg'
 gem 'koala'
 gem 'event_tracker'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :development do
 	gem 'better_errors'

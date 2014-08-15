@@ -2,19 +2,13 @@
 
 <ul class="nav navbar-nav">
 	<li><%= link_to "QU'EST CE QUE C'EST ?", page_path('about') %></li>
-	<li><%= link_to "COUNTDOWN", page_path('countdown') %></li>
-    <% if current_user %>
-		<li>
-			<%= link_to 'LOGOUT', :logout, method: :post %>
-		</li>
-	<% else %>
-		<li>
-			<%= link_to 'REGISTER', new_user_path %>
-		</li>
-		<li>
-			<%= link_to 'LOGIN', :login %>
-		</li>
-	<% end %>
+	<% if current_user %>
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <li><%= link_to "Settings", '#' %></li>
+    	<li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+  	<% else %>
+    	<li><%= link_to "Sign in", new_user_session_path %></li>
+  <% end %>
 
 </ul>
 

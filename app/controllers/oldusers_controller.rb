@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
-  #before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+class OldusersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @users = User.all
@@ -8,13 +8,31 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to :back, :alert => "Access denied."
-    end
+    @is_admin = current_user && current_user.id == @user.id
   end
 
   def new
+    if current_user
+      redirect_to root_path, :notice => "You are already registered"
+    end
     @user = User.new
+  end
+
+  def edit
+    @user =  User.find(params[:id])
+    if current_user.id != @user.id
+      redirect_to @user
+    end
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path, :notice => "User was successfully created."
+    else
+      render "new"
+    end
   end
 
   def update
@@ -26,6 +44,14 @@ class UsersController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
     end
   end
 
