@@ -258,9 +258,9 @@ Devise.setup do |config|
 
   require 'omniauth-google-oauth2'
   config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"], 
-    { access_type: 'offline',
-      scope: 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar',
-    }
+    :access_type => 'offline',
+    :scope => 'userinfo.email, calendar, gmail.readonly'
+    
 
-    config.secret_key = ENV["DEVISE_SECRET_KEY"]
+  config.secret_key = ENV["DEVISE_SECRET_KEY"]
 end

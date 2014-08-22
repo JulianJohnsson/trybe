@@ -24,6 +24,7 @@ gem 'event_tracker'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'google-api-client', :require => 'google/api_client'
 
 group :development do
 	gem 'better_errors'
