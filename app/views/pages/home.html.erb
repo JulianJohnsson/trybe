@@ -5,24 +5,72 @@
     $.plax.enable()
     })
 </script>
-<div class="row">
+<div class="row hp">
 	<div align="center" class="col-xs-4 text-center" style="margin-top:130px;">
 		<img src="/images/maori-hp.png" data-xrange="20" data-yrange="20" class="img-responsive">
 	</div>
 	
-		<div class="col-xs-4 text-center" style="margin-top:20px;">
-			<img src="/images/mask-hp.png" data-xrange="-50" data-yrange="-50" class="img-responsive">
-			<a href="/visitors/new" class="logo-hp">
-				<div id="logo-hp" style="margin-top:70px; 		border-radius: 10px;">
-					<p><img src="/images/logo-hp.png" data-xrange="5" data-yrange="5"></p>
-					<p><img src="/images/baseline-hp.png" data-xrange="-3" data-yrange="-3" class="img-responsive"></p>
+	<div class="col-xs-4 text-center" style="margin-top:20px;">
+		<img src="/images/mask-hp.png" data-xrange="-50" data-yrange="-50" class="img-responsive">
+		<a href="#about" class="logo-hp">
+			<div id="logo-hp" style="margin-top:70px;">
+				<p><img src="/images/logo-hp.png" data-xrange="5" data-yrange="5"></p>
+				<p><img src="/images/baseline-hp.png" data-xrange="-3" data-yrange="-3" class="img-responsive"></p>
+			</div>
+		</a>
+		<div class="row">
+			<a class="scroll" href="#about">
+				<div class="col-sm-6 col-sm-offset-3">
+					<p style="font-size: 10px;">Comment ?</p>
+					<p><span style="font-size: 26px;" class="glyphicon glyphicon-chevron-down"></span></p>
 				</div>
 			</a>
 		</div>
+	</div>
 	<div class="col-xs-4 text-center" style="margin-top:130px;">
 		<img src="/images/skull-hp.png" data-xrange="-30" data-yrange="30" class="img-responsive">
 	</div>
 </div>
 <div class="col-sm-3 hp_links">
-	<a href="/visitors/new">Inscription</a>
+	<a href="/visitors/new"><div>Inscription</div></a>
+</div>
+<a id="about"><div class="row about-1">
+	<div class="col-sm-4 hidden-xs">
+
+	</div>
+	<div class="col-sm-6 col-sm-offset-2">
+		<h2>trybe est une application d'organisation d'événements en réseau restreint</h2>
+		<p>Invite tes amis et crées ta tribu</p>
+		<p>Crée des événements ponctuels ou récurrents</p>
+		<p>Tiens ta tribu au courant de ta disponibilité sans effort</p>
+		<p>Pas la peine de courir après les réponses, trybe se charge de tout !</p>
+	</div>
+</div></a>
+<div class="row about-2">
+	<div class="col-sm-8">
+		<h2>Rassemble ta tribu et tiens la informée</h2>		
+		<p>Choisi ton type de tribu en fonction des infos que tu souhaites partager (disponibilité, agenda, localisation, ... etc)</p>
+		<p><i class="glyphicon glyphicon-calendar"></i> Connecte ton agenda et ta boite mail avec ton compte Google</p>
+		<p>Invite tes amis à rejoindre ta tribu et débloque de nouvelles fonctionnalités</p>
+		<p><i class="glyphicon glyphicon-envelope"></i> Ils ne veulent pas s'inscrire ? Pas grave, trybe se charge de les noyer de mails, toi non !</p>
+	</div>
+	<div class="col-sm-4 hidden-xs">
+	</div>
+</div>
+<div class="row about-3">
+	<div class="col-sm-4">
+		<%= image_tag('bulle.png', :class => "img-responsive") %>
+	</div>
+	<div class="col-sm-6 col-sm-offset-2">
+		<h2>trybe te permet de savoir en un clien d'oeil :</h4>
+		<h4>Où sont-ils ? Qui est dans le coin ?</h4>
+		<h4>Qui est disponible ? Et à quelle heure ?</h4>
+		<h4>Où est ce qu'on se retrouve ?</h4>
+	</div>
+</div>
+<div class="row about-4">
+	<div class="col-sm-9">
+		<p>Accède à l'application en avant-première <span style="margin-left: 10px;" class="glyphicon glyphicon-arrow-right"></span>
+		</p>
+	</div>
 </div>

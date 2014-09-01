@@ -2,7 +2,7 @@ class VisitorsController < ApplicationController
 
   	def new
 		@visitor = Visitor.new
-		render 'visitors/new'
+		render 'visitors/new', :layout => 'special'
 	end
 
 	def create
@@ -27,9 +27,11 @@ class VisitorsController < ApplicationController
 		@facebook_post = FacebookPost.new
 		if session[:visitor_id]
 			@visitor = Visitor.find(session[:visitor_id])
+			render 'visitors/index', :layout => 'special'
 		elsif params[:id]
 			@visitor = Visitor.find(params[:id])
 			session[:visitor_id] = @visitor.id
+			render 'visitors/index', :layout => 'special'
 		else
 			redirect_to root_path
 		end

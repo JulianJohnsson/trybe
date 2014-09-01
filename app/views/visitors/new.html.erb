@@ -1,16 +1,17 @@
 <% content_for :title do %>Sign Up for Trybe<% end %>
 <% content_for :description do %>Sign up to access Trybe beta release<% end %>
-<div class="container">
-	<div class="row" style="margin-top: 100px; margin-bottom: 20px;">
-		<div class="col-sm-8 col-sm-offset-2 column hp-layer">
-			<h1>Rassemble ta tribu pour organiser facilement tes sorties entre amis !</h1>
-			<div class="message"><p>
-				L'application est en cours de test. Elle est uniquement accessible sur invitation pour l'instant.
-			</p></div>
-			<div class="message"><p>
-				Inscris-toi pour <strong>accéder gratuitement</strong> à la version privée avant le lancement.
-			</p></div>
-			<div style="padding-top:40px;">
+
+<div class="row tribe">
+	<div class="col-sm-10 col-sm-offset-1 column hp-layer">
+		<h1>Forme ta tribu pour organiser facilement tes sorties entre amis !</h1>
+		<div class="message col-sm-8 col-sm-offset-2">
+			<p>
+				L'application est actuellement en phase de test. Elle est uniquement accessible sur invitation.
+			</p>
+			<p>
+				Inscris-toi à la newsletter pour <strong>accéder gratuitement</strong> à la version privée avant le lancement.
+			</p>
+			<div style="padding-top:30px;">
 				<%= simple_form_for(@visitor, html: {class: "form-inline"}) do |f| %>
 					<%= f.error_notification %>
 					<%= f.input :email, label: false, :placeholder => 'Ton email...' %>
@@ -18,13 +19,17 @@
 						<i class="glyphicon glyphicon-arrow-right"></i>  Obtenir mon invitation
 					<% end %>
 				<% end %>
-				<p style="font-size:8px; padding-top:4px;">
+				<p style="font-size:9px; padding-top:8px;">
 					<em>* Nous t'enverrons 1 email par semaine maximum, promis !</em>
 				</p>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="col-sm-3 hp_links">
+	<a href="/#about"><div>Plus d'informations</div></a>
+</div>
+
 
 
 

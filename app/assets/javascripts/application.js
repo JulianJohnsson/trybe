@@ -15,4 +15,5 @@
  //= require turbolinks
  //= require bootstrap
  //= require plax.js
+ //= require fullcalendar
  //= require_tree .

@@ -1,26 +1,44 @@
 .hp {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    
+    min-height: 500px;
+    height: 100vh; 
     background-color: #1a1a1a;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .hp_links {
     position: fixed;
-    top: 94%;
-    left: 20px;
+    top: 93%;
+    right: 20px;
     font-size: 16px;
 
     a:hover {
         color: #ffffff;
         text-decoration: none;
         background-color:black;
-    }   
+    }
+    div {
+        background: rgba(200, 200, 200, .2);
+        padding: 5px;
+        border-radius: 5px;
+    }  
+}
+
+.scroll {
+    div {
+        background-color: rgba(200, 200, 200, .1);
+        color: #d77f0b;
+        padding-top: 25px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        font-size: 16px; 
+        margin-top: 50px;
+
+    }
+    div:hover {
+        text-decoration: none;
+        background: rgba(200, 200, 200, .2);
+        color: #ffffff;
+    }
 }
 
 .logo-hp {
@@ -31,6 +49,57 @@
     }  
 }
 
+.about-1 {
+    background: #f0f0f0 image-url("arrows_opac.png") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
+    color: #1a1a1a;
+    text-align: left;
+    padding: 15px;
+    h2 {
+    color: #d77f0b;
+    font-size: 24px;
+    margin-bottom: 20px;
+    }
+    img {
+    opacity: 0.2;
+    }
+}
+.about-2 {
+    min-height: 250px;
+    background: darken(#f0f0f0, 10%) image-url("indian_droite_blanc_opac.png") no-repeat 105% 0%;
 
+    color: #1a1a1a;
+    text-align: left;
+    padding: 15px;
+    h2 {
+    color: #d77f0b;
+    font-size: 24px;
+    margin-bottom: 20px;
+    }
+    img {
+    opacity: 0.2;
+    }
+}
+.about-3 {
+    min-height: 250px;
+    background: lighten(#1a1a1a, 10%) image-url("indian_droite_cropped.png") no-repeat 0% 50%;
+    color: darken(#f0f0f0, 10%);
+    text-align: left;
+    padding: 20px;
+    h2 {
+    color: #d77f0b;
+    font-size: 24px;
+    margin-bottom: 20px;
+    }
+}
+.about-4 {
+    background-color: #1a1a1a;
+    font-size: 26x;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
 

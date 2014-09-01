@@ -1,29 +1,26 @@
 <% content_for :title do %>Sign Up for Trybe<% end %>
 <% content_for :description do %>Sign up to access Trybe beta release<% end %>
 
-<div class="container">
-	<div class="row" style="margin-top: 50px; margin-bottom: 0px;">
-		<div class="col-sm-9 hp-layer">
-			<h1>Bienvenue sur trybe</h1>
 
-			<p>Vous êtes déjà <%= Visitor.count %> pré inscrits, les prochaines invitations partiront bientôt.</p>
+	<div class="row tribe">
+		<div class="col-sm-10 col-sm-offset-1 hp-layer">
+			<h1>Bienvenue sur trybe</h1>
+			<p>Vous êtes déjà <%= Visitor.count + 132 %> pré inscrits, les prochaines invitations partiront bientôt.</p>
       <p>Tu es actuellement <span style="color:#d77f0b; font-size:20px;">n°<%= @visitor.id %></span> dans la file d'attente.</p>
 			<p>
 				Parles-en autours de toi pour recevoir ton accès plus rapidement !
 			</p>
-    </div>
-    <div class="col-sm-3">
-      <div class="hp-layer" style="padding-top:30px;">  
+      <div class="hp-layer">  
         <p>
-          <i class="glyphicon glyphicon-circle-arrow-down"  style="font-size:30px;"></i>
-        </p>			
+          <i class="glyphicon glyphicon-circle-arrow-down"  style="font-size:40px;"></i>
+        </p>      
         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  	  			<i class="glyphicon glyphicon-remove-sign"></i> SHARE THE LOVE
-  			</button>
+            <i class="glyphicon glyphicon-bullhorn"></i>  PARLE EN SUR FACEBOOK
+        </button>
       </div>
-		</div>
+    </div>
 	</div>
-</div>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -43,6 +40,10 @@
       	</div>
     </div>
   </div>
+</div>
+
+<div class="col-sm-3 hp_links">
+  <a href="/#about"><div>Plus d'informations</div></a>
 </div>
 
 

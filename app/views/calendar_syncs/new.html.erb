@@ -1,0 +1,18 @@
+<h1>New calendar</h1>
+
+<%= @calendar_list %>
+<div class="message">
+	<p>
+		Sélectionne l'agenda que tu souhaites synchroniser avec trybe.
+	</p>
+</div>
+<div style="padding-top:40px;">
+	<%= simple_form_for(@calendar_sync, html: {class: "form"}) do |f| %>
+		<%= f.error_notification %>
+		<%= f.input :google_calendar_id, :label => "Agenda", :collection => @calendar_list %>
+		<%= f.input :user_id, :as => "hidden", :input_html => { :value => @user.id } %>
+		<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+				<i class="glyphicon glyphicon-arrow-right"></i>  Synchroniser mon agenda
+			<% end %>
+	<% end %>
+</div>
