@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/arsduo/koala.git
+  revision: ba89960f3f19e1d849a35ad9cbb884878d7cf358
+  specs:
+    koala (1.10.0)
+      addressable
+      faraday
+      multi_json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,10 +112,6 @@ GEM
       turbolinks
     json (1.8.1)
     jwt (1.0.0)
-    koala (1.10.0)
-      addressable
-      faraday
-      multi_json
     launchy (2.4.2)
       addressable (~> 2.3)
     mail (2.5.4)
@@ -235,7 +240,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
-  koala
+  koala!
   omniauth-facebook
   omniauth-google-oauth2
   pg
