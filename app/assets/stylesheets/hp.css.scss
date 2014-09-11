@@ -6,20 +6,13 @@
 
 .hp_links {
     position: fixed;
-    top: 93%;
+    bottom: 15px;
     right: 20px;
     font-size: 16px;
-
-    a:hover {
-        color: #ffffff;
-        text-decoration: none;
-        background-color:black;
-    }
-    div {
-        background: rgba(200, 200, 200, .2);
-        padding: 5px;
-        border-radius: 5px;
-    }  
+    z-index: 20;
+    button {
+        width: 150px;
+    } 
 }
 
 .scroll {
@@ -31,7 +24,9 @@
         height: 100px;
         border-radius: 50px;
         font-size: 16px; 
-        margin-top: 50px;
+        margin-top: 50%;
+        margin-left: auto;
+        margin-right: auto;
 
     }
     div:hover {
@@ -41,16 +36,10 @@
     }
 }
 
-.logo-hp {
-    :hover {
-        color: #ffffff;
-        text-decoration: none;
-        margin: 0 auto;
-    }  
-}
+
 
 .about-1 {
-    background: #f0f0f0 image-url("arrows_opac.png") no-repeat center fixed;
+    background: #f0f0f0 image-url("arrows_opac.png") no-repeat 50% -100% fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,9 +57,31 @@
     opacity: 0.2;
     }
 }
+
+#main {
+    -webkit-transition: -webkit-transform 1.0s ease-in-out;
+    transition: transform 1.0s ease-in-out;
+}
+
+a[ id= "about" ]:target ~ #main {
+    -webkit-transform: translateY( -100vh );
+    transform: translateY( -100vh );
+}
+
+.icon {
+    color: white;
+    background-color: darken(#f0f0f0, 10%);
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 auto 15px;
+    padding-top: 8px;
+}
+
 .about-2 {
     min-height: 250px;
-    background: darken(#f0f0f0, 10%) image-url("indian_droite_blanc_opac.png") no-repeat 105% 0%;
+    background: darken(#f0f0f0, 10%) image-url("indian_droite_blanc_large_opac.png") no-repeat 105% 30% fixed;
 
     color: #1a1a1a;
     text-align: left;
@@ -86,20 +97,32 @@
 }
 .about-3 {
     min-height: 250px;
-    background: lighten(#1a1a1a, 10%) image-url("indian_droite_cropped.png") no-repeat 0% 50%;
+    background-color: lighten(#1a1a1a, 10%);
+    background-image: url("indian_droite_cropped.png"), url("bulle.png"); 
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 50%, 130px 50%;
+    background-opacity: 1, 0.2;
     color: darken(#f0f0f0, 10%);
     text-align: left;
     padding: 20px;
     h2 {
-    color: #d77f0b;
-    font-size: 24px;
-    margin-bottom: 20px;
+        color: #d77f0b;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    ul {
+        line-height: 30px;
     }
 }
 .about-4 {
     background-color: #1a1a1a;
-    font-size: 26x;
+    font-size: 16x;
     padding-top: 15px;
     padding-bottom: 10px;
 }
 
+@media only screen and (max-device-width: 480px) {
+    .about-4 {
+        font-size: 10px;
+    }
+}

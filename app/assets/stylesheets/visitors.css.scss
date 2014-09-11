@@ -33,3 +33,23 @@
 .form-inline input {
     //width:200px;
 }
+
+.about_links {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 16px;
+
+    a:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    div {
+        background: rgba(200, 200, 200, .2);
+        padding: 5px;
+        border-radius: 5px;
+    }
+    div:hover {
+      background: rgba(200, 200, 200, .3);  
+    }  
+}
