@@ -98,7 +98,7 @@ a[ id= "about" ]:target ~ #main {
 .about-3 {
     min-height: 250px;
     background-color: lighten(#1a1a1a, 10%);
-    background-image: url("indian_droite_cropped.png"), url("bulle.png"); 
+    background-image: url("/images/indian_droite_cropped.png"), url("/images/bulle.png"); 
     background-repeat: no-repeat, no-repeat;
     background-position: 0% 50%, 130px 50%;
     background-opacity: 1, 0.2;
