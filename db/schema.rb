@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822174844) do
+ActiveRecord::Schema.define(version: 20141002112548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140822174844) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_id"
+    t.string   "tribe_id"
   end
 
   create_table "facebook_oauth_settings", force: true do |t|
@@ -52,6 +53,13 @@ ActiveRecord::Schema.define(version: 20140822174844) do
   end
 
   add_index "oldusers", ["email"], name: "index_oldusers_on_email", unique: true, using: :btree
+
+  create_table "tribes", force: true do |t|
+    t.string   "name"
+    t.string   "admin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -76,6 +84,11 @@ ActiveRecord::Schema.define(version: 20140822174844) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_tribes", id: false, force: true do |t|
+    t.integer "users_id"
+    t.integer "tribes_id"
+  end
 
   create_table "visitors", force: true do |t|
     t.string   "email"

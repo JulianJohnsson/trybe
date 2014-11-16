@@ -15,9 +15,14 @@ class ApplicationController < ActionController::Base
 
 	private
 
-
   def current_visitor
     @current_visitor ||= Visitor.find(session[:visitor_id]) if session[:visitor_id]
   end
   helper_method :current_visitor
+
+  def current_tribe
+    current_tribe ||= Tribe.where(user_id: current_user.id) if current_user
+  end
+  helper_method :current_tribe
+
 end

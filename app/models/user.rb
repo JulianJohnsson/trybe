@@ -7,8 +7,10 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :calendar_syncs
+  has_many :availabilitys
+  has_and_belongs_to_many :tribes
 
-#pas utilisée dans cette version, voir en desssous
+#pas utilisée dans cette version, voir en dessous
   def self.from_omniauth(auth)
 	  where(auth.slice(:provider, :uid)).first_or_create do |user|
 		    user.email = auth.info.email
@@ -56,6 +58,8 @@ class User < ActiveRecord::Base
       data = access_token.info
       user = User.where(:email => data.email).first
       
+      Rails.logger.info("refresh token : #{access_token.credentials.refresh_token}")
+
       unless user
           user = User.create(name: data["name"],
   	          provider:access_token.provider,

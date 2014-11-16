@@ -10,7 +10,11 @@ class CalendarSyncsController < ApplicationController
 
 	def show
 		set_calendar_sync
-		@events = @calendar_sync.fetch_calendar
+		@busy_schedule = @calendar_sync.fetch_calendar
+	end
+
+	def index
+		@calendar_syncs = current_user.calendar_syncs
 	end
 
 	def create
@@ -22,7 +26,14 @@ class CalendarSyncsController < ApplicationController
 	      else
 	        render :new 
 	      end
-	 
+	end
+
+	def destroy
+		@calendar_sync.destroy
+    	respond_to do |format|
+	      format.html { redirect_to calendar_syncs_url, notice: 'Le calendrier a été supprimé' }
+	      format.json { head :no_content }
+	    end
 	end
 
 	private

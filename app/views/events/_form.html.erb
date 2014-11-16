@@ -7,6 +7,7 @@
     <%= f.input :start_time %>
     <%= f.input :end_time %>
     <%= f.input :user_id, :as => "hidden", :input_html => { :value => @user.id } %>
+    <%= f.input :tribe_id, :as => "hidden", :input_html => { :value => current_tribe.id } %>
   </div>
 
   <div class="form-actions">

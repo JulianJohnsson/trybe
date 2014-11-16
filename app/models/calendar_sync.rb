@@ -13,6 +13,7 @@ class CalendarSync < ActiveRecord::Base
 
 	    if client.authorization.refresh_token && client.authorization.expired?
 	      client.authorization.fetch_access_token!
+	      user.update(google_access_token:client.authorization.access_token)
 	    end
 
 	    service = client.discovered_api('calendar', 'v3')
@@ -45,10 +46,10 @@ class CalendarSync < ActiveRecord::Base
 	      :api_method => service.freebusy.query,
 	      :body => JSON.dump({
 	      					:timeMin => DateTime.now.to_datetime.rfc3339,
-	      					:timeMax => (DateTime.now + 2.hours).to_datetime.rfc3339,
+	      					:timeMax => (DateTime.now + 7.days).to_datetime.rfc3339,
 	      					:items => [{'id' => google_calendar_id}]
 	      				}),
 	      :headers => {'Content-Type' => 'application/json'})
-	    events = JSON.parse(result.data.to_json)
+	    busy_schedule = JSON.parse(result.data.to_json)["calendars"][google_calendar_id]["busy"]
 	end
 end

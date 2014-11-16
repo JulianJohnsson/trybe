@@ -1,8 +1,8 @@
 // adding specific fonts
 
 @font-face {
-  font-family: "Playfair";
-  src:font-url("PlayfairDisplay-Regular.ttf") format('truetype');
+  font-family: "Philosopher";
+  src:font-url("Philosopher-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
   }
@@ -16,7 +16,7 @@ $gray-lighter: #f0f0f0;
 $body-bg: $gray-darker;
 $text-color: $gray-lighter;
 
-$font-family-sans-serif:  "Playfair", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Philosopher", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $input-border-focus: $brand-primary;
 

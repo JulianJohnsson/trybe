@@ -51,7 +51,7 @@
     h2 {
     color: #d77f0b;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     }
     img {
     opacity: 0.2;
@@ -70,18 +70,22 @@ a[ id= "about" ]:target ~ #main {
 
 .icon {
     color: white;
-    background-color: darken(#f0f0f0, 10%);
+    background-color: darken(#f0f0f0, 15%);
     opacity: 0.5;
     width: 100px;
     height: 100px;
     border-radius: 50px;
     margin: 0 auto 15px;
     padding-top: 8px;
+    :hover {
+    color: #d77f0b;
+    opacity: 1;
+    }
 }
 
 .about-2 {
     min-height: 250px;
-    background: darken(#f0f0f0, 10%) image-url("indian_droite_blanc_large_opac.png") no-repeat 105% 30% fixed;
+    background: darken(#f0f0f0, 10%) image-url("indian_droite_blanc_large_opac.png") repeat-y 105% 80% fixed;
 
     color: #1a1a1a;
     text-align: left;
@@ -100,8 +104,7 @@ a[ id= "about" ]:target ~ #main {
     background-color: lighten(#1a1a1a, 10%);
     background-image: url("/images/indian_droite_cropped.png"), url("/images/bulle.png"); 
     background-repeat: no-repeat, no-repeat;
-    background-position: 0% 50%, 130px 50%;
-    background-opacity: 1, 0.2;
+    background-position: 0% 50%, 140px 50%;
     color: darken(#f0f0f0, 10%);
     text-align: left;
     padding: 20px;
