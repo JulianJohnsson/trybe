@@ -2,6 +2,7 @@ class VisitorsController < ApplicationController
 
   	def new
 		@visitor = Visitor.new
+		track_event("sign_up_page")
 		render 'visitors/new', :layout => 'special'
 	end
 
@@ -13,7 +14,7 @@ class VisitorsController < ApplicationController
 			session[:visitor_id] = @visitor.id
 			@visitor.subscribe
 			track_event("signup", email:"#{@visitor.email}")
-			#mixpanel_people_set( "email" => "#{@visitor.email}" )
+			mixpanel_people_set( "email" => "#{@visitor.email}" )
 			flash[:notice] = "Signed up #{@visitor.email} successfully."
 			cookies[:email] = @visitor.email
 			redirect_to soon_path
@@ -28,10 +29,12 @@ class VisitorsController < ApplicationController
 		if session[:visitor_id]
 			@visitor = Visitor.find(session[:visitor_id])
 			render 'visitors/index', :layout => 'special'
+			track_event("soon_page")
 		elsif params[:id]
 			@visitor = Visitor.find(params[:id])
 			session[:visitor_id] = @visitor.id
 			render 'visitors/index', :layout => 'special'
+			track_event("soon_page")
 		else
 			redirect_to root_path
 		end

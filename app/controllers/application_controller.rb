@@ -6,11 +6,13 @@ class ApplicationController < ActionController::Base
   	#before_filter :require_login
 
   	def mixpanel_distinct_id
-    	#current_visitor.id
+    	if current_visitor
+        current_visitor.id
+      end
   	end
 
   	def mixpanel_name_tag
-    	current_user && current_user.email
+    	current_visitor && current_visitor.email
   	end
 
 	private
